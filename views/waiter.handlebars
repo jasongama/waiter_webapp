@@ -1,0 +1,23 @@
+</form>
+<form action="/reset" method="post">
+    <button class="resetButton" type="submit" name="reset" value="Reset">Reset</button>
+</form>
+</div>
+<form action="/show" method="POST">
+
+    <div class="col-9">
+        {{#each waiters}}
+        <input type="checkbox" name="daysOfweek" value="Sunday"> {{sunday}}
+        <input type="checkbox" name="daysOfweek" value="Monday"> {{Monday}}
+        <input type="checkbox" name="daysOfweek" value="Tuesday"> {{Tuesday}}
+        <input type="checkbox" name="daysOfweek" value="Wednesday"> {{Wednesday}}
+        <input type="checkbox" name="daysOfweek" value="Thursday"> {{Thursday}}
+        <input type="checkbox" name="daysOfweek" value="Friday"> {{Friday}}
+        <input type="checkbox" name="daysOfweek" value="Saturday"> {{Saturday}}
+        <input type="checkbox" name="daysOfweek" Value="" id="id" checked>SelectAll
+        {{/each}}
+    </div>
+
+    <div class="col-8">
+        <button class="showButton" type="submit" name="show" value="Show">FILTER BUTTON</button>
+    </div>

@@ -1,0 +1,17 @@
+<div class="row">
+<h1> working days of waiters </h1>
+<table>
+    <tr> 
+        
+        <th>Name</th>
+    </tr>
+    {{#each actions}}
+    <tr>
+        <td><a href="/count/{{names}}">{{names}}</a></td>
+    </tr>
+    {{/each}}
+</table>
+<form action="/back" method="POST">
+<button class="back" name="BackButton" type="submit" onclick="" value ="back">back</button>
+</form>
+</div>
