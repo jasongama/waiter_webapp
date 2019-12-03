@@ -17,7 +17,7 @@ const pool = new Pool({
 })
 
 const waiter = waiters(pool);
-const add = require("./greetRouter");
+const add = require("./waitersRouter");
 const tag = add(waiter);
 waiterApp.use(session({
     secret: 'show the login page',
@@ -39,18 +39,41 @@ waiterApp.use(bodyParser.urlencoded({
 }));
 waiterApp.use(bodyParser.json())
 
-waiterApp.use(express.static("Public"))
+waiterApp.use(express.static("public"))
 
 waiterApp.set('view engine', 'handlebars');
 
 waiterApp.get("/", tag.index);
 
-waiterApp.get("/greeted", async function (req, res) {
-    res.render('actions', {
-        actions: await greeting.getGreet()
+// waiterApp.get("/greeted", async function (req, res) {
+//     res.render('actions', {
+//         actions: await greeting.getGreet()
+//     })
+// })
+
+waiterApp.post('/waiters/:username', async function (req, res) {
+
+    response = await waiter.addWaiters( req.body.waiters)
+    res.redirect('/')
+})
+
+waiterApp.get('/waiters/:username', async function(req, res){
+    res.render('waiter',{
+
     })
 })
 
+waiterApp.get('/days', async function(req, res){
+    res.render('waiter',{
+
+    })
+})
+let PORT = process.env.PORT || 3000;
+
+
+waiterApp.listen(PORT, function () {
+    console.log("Waiterwebapp", PORT)
+});
 
 
 

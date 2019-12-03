@@ -1,4 +1,5 @@
 <div class="row">
+    <form action="/days" method="get">
 <h1> working days of waiters </h1>
 <table>
     <tr> 
@@ -11,7 +12,10 @@
     </tr>
     {{/each}}
 </table>
+ <button class="resetButton" type="submit" name="reset" value="Reset">Reset</button>
+   <button class="showButton" type="submit" name="show" value="Show">FILTER BUTTON</button>
 <form action="/back" method="POST">
 <button class="back" name="BackButton" type="submit" onclick="" value ="back">back</button>
+</form>
 </form>
 </div>

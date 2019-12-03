@@ -1,7 +1,7 @@
 create table weekdays(
 	id serial not null primary key,
 	weekdays text not null,
-	count int
+	count int not null
 
 );
 
